@@ -17,7 +17,9 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '',
     clean: true,
+    // assetModuleFilename: 'src/assets/images/[name].[ext]'
   },
   optimization: {
     runtimeChunk: 'single',

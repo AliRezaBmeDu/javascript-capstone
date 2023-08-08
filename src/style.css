@@ -1,11 +1,84 @@
 body {
-    background-image: url('./assets/bowser.jpg');
+    background-image: url('./assets/images/bowser.jpg');
+    margin: auto;
+    background-color: rgb(44, 43, 43);
 }
 
-h1 {
-  color: blue;
+nav {
+    background-color: rgb(92, 32, 9);
+    padding: 0.01rem 1rem 1.5rem 1rem;
+    color: lightblue;
+    font-size: 32px;
+    height: 4rem;
 }
 
-h2 {
-  color: yellow;
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
 }
+
+nav ul img {
+    height: 32px;
+}
+
+nav ul li:first-child {
+    display: flex;
+    gap: 8px;
+    width: 4rem;
+}
+
+nav ul li p {
+    position: relative;
+    top: -0.5rem;
+    font-size: 16px;
+    font-family: cursive, sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    grid-gap: 20px; /* Gap between grid items */
+    padding: 72px;
+    align-items: center;
+    margin: auto;
+    margin-left: 72px;
+  }
+
+  .demo {
+    width: 300px;
+    height: 250px;
+    background-color: lightblue;
+    border: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+  }
+
+
+  
+  /* Style the footer section */
+footer {
+    /* border-top: 2px solid; */
+    margin-top: auto;
+    background-color: rgb(141, 48, 5);
+    color: lightblue;
+    /* Add the following Flexbox rules */
+    /* position: fixed; */
+    width: 100%;
+    height: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding: 2px; */
+  }
+  
+  footer p {
+    text-align: center;
+    font-size: 0.8rem;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    font-style: italic;
+    margin: auto;
+  }

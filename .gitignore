@@ -1,1 +1,11 @@
 node_modules/
+
+src/
+
+dist/
+
+.hintrc
+
+.stylelintrc.json
+
+.eslintrc.json
