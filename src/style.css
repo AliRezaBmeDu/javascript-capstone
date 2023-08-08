@@ -1,11 +1,3 @@
-body {
-    background-image: url('./assets/bowser.jpg');
-}
-
-h1 {
-  color: blue;
-}
-
-h2 {
-  color: yellow;
+* {
+  box-sizing: border-box;
 }
