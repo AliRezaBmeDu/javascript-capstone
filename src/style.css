@@ -1,3 +1,36 @@
 * {
   box-sizing: border-box;
 }
+
+/* Style the header section */
+nav {
+  background-color: rgb(121, 5, 5);
+  color: lightblue;
+  padding: 0.5rem 5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: 'Franklin Gothic Medium', Courier, monospace, sans-serif;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Style the footer section */
+footer {
+  border-top: 2px solid;
+  margin-top: auto;
+  background-color: rgb(223, 228, 247);
+
+  /* Add the following Flexbox rules */
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
