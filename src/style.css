@@ -76,10 +76,10 @@ nav ul {
   gap: 8px;
 }
 
-.reserve, .comment {
+.reserve,
+.comment {
   margin: auto;
   box-sizing: border-box;
-  box-shadow: 5px;
   border-radius: 4px;
   height: 1.5rem;
   background-color: #4b4c4e;
@@ -91,6 +91,7 @@ footer {
   border-top: 2px solid rgb(29, 28, 28);
   background-color: rgb(29, 28, 28);
   color: lightblue;
+
   /* Add the following Flexbox rules */
   left: 0;
   bottom: 0;

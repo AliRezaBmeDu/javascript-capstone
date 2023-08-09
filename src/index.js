@@ -1,6 +1,6 @@
 import './style.css';
-import { renderList, callCreateItems } from './modules/router';
+import { callCreateItems } from './modules/router';
 
 window.addEventListener('DOMContentLoaded', () => {
-    callCreateItems();
-  });
+  callCreateItems();
+});
