@@ -106,3 +106,90 @@ footer {
   justify-content: center;
   padding: 1rem 0.5rem;
 }
+
+/* Add style for comment popup */
+.hidden,
+.popup--hide {
+  display: none;
+}
+
+.popup {
+  padding: 1rem 2rem;
+  background-color: #f1f1f1;
+  display: grid;
+  width: 60vw;
+  height: 100vh;
+  position: fixed;
+  overflow: scroll;
+  top: 0;
+  bottom: 0;
+}
+
+.container {
+  width: 88%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -1.5rem;
+}
+
+.img {
+  width: 90%;
+  height: 70vh;
+}
+
+ul.user-comment li {
+  list-style: none;
+  line-height: 1.5;
+}
+
+.channel-name {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.comments-heading {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.channel {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+#x-icon {
+  float: right;
+  font-size: 1.5rem;
+  margin-left: 2rem;
+  cursor: pointer;
+  position: relative;
+  left: 2rem;
+  align-self: flex-end;
+}
+
+.add-comment > * {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.2rem;
+}
+
+.submitBtn {
+  background-color: white;
+  border: 1px solid #888;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.submitBtn:hover {
+  background-color: wheat;
+}

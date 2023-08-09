@@ -1,3 +1,5 @@
+import popup from './popup.js';
+
 const container = document.getElementById('items-container');
 
 export const renderList = (seriesList) => {
@@ -28,6 +30,17 @@ export const renderList = (seriesList) => {
     singleItem.appendChild(overhead);
     singleItem.appendChild(btnContainer);
     container.appendChild(singleItem);
+  });
+
+  const commentsBtn = document.querySelectorAll('.comment');
+  const popupSection = document.createElement('section');
+  popupSection.className = 'popup--hide';
+  container.appendChild(popupSection);
+
+  commentsBtn.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      popup(index, seriesList);
+    });
   });
 };
 
