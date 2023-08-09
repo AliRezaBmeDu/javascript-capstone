@@ -94,12 +94,7 @@ const result = [];
 const totalItem = 6;
 export const createItems = async(id) => {
     try{
-        const response = await fetch(`https://api.tvmaze.com/shows/${id}`, {
-            method: 'GET',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          });
+        const response = await fetch(`https://api.tvmaze.com/shows/${id}`);
           const data = await response.json();
           const [name , image, rating, language, genre, summary, id_num ] = await [data.name, data.image.medium, 
                         data.rating.average, data.language, data.genres, data.summary, data.id];
