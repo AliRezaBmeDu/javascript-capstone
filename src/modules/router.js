@@ -13,7 +13,12 @@ export const renderList = (seriesList) => {
     const overhead = document.createElement('div');
     overhead.className = 'overhead';
     overhead.innerHTML = `<p class='name'>${series.name}</p>
-                            <i class="bi bi-hand-thumbs-up like-btn"></i>`;
+                          <div class='like-container'>
+                            <i class="bi bi-hand-thumbs-up like-btn"></i>
+                            <span class="like-detail">5 likes</span>
+                          </div>`;
+                          
+                            // <i class="bi bi-hand-thumbs-up-fill like-btn-fill"></i>`;
     const btnContainer = document.createElement('div');
     btnContainer.className = 'button-container';
     const comment = document.createElement('button');

@@ -42,8 +42,8 @@ nav ul {
 }
 
 .single-item {
-  width: 270px;
-  height: 380px;
+  width: 300px;
+  height: 400px;
   background-color: lightblue;
   box-sizing: border-box;
   border: 1px solid gray;
@@ -54,7 +54,7 @@ nav ul {
 
 .single-item img {
   width: 100%;
-  height: 65%;
+  height: 60%;
 }
 
 .overhead {
@@ -68,17 +68,26 @@ nav ul {
 
 .name {
   font-family: 'Franklin Gothic Medium', Courier, monospace, sans-serif;
+  width: 70%;
 }
 
-.like-btn {
+.like-container {
+  width: 30%;
   height: 1.2rem;
   margin-top: 1rem;
+}
+
+.like-detail {
+  margin-left: 2px;
+  font-size: 0.8rem;
+  font-style: italic;
 }
 
 .button-container {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  margin-top: 1rem;
 }
 
 .reserve,
@@ -192,4 +201,8 @@ ul.user-comment li {
 
 .submitBtn:hover {
   background-color: wheat;
+}
+
+.hide-seek {
+  display: none !important;
 }
