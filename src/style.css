@@ -114,37 +114,36 @@ footer {
 }
 
 .popup {
-  background-color: #f0f0f0;
   padding: 1rem 2rem;
-  display: block;
-  width: 100vw;
+  background-color: #f1f1f1;
+  display: grid;
+  width: 60vw;
   height: 100vh;
   position: fixed;
   overflow: scroll;
   top: 0;
   bottom: 0;
-  border: 1px solid black;
 }
 
 .container {
-  width: 800px;
-  background-color: #f1f1f1;
+  width: 88%;
   margin: 0 auto;
-  display: grid;
+  display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  gap: 0.8rem;
   padding: 1rem;
-  margin-left: 100px;
 }
 
 .top {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -1.5rem;
 }
 
 .img {
-  min-width: 100%;
+  width: 90%;
+  height: 70vh;
 }
 
 ul.user-comment li {
@@ -173,6 +172,9 @@ ul.user-comment li {
   font-size: 1.5rem;
   margin-left: 2rem;
   cursor: pointer;
+  position: relative;
+  left: 2rem;
+  align-self: flex-end;
 }
 
 .add-comment > * {

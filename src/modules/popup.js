@@ -5,10 +5,9 @@ const popup = (indx, seriesList) => {
     if (indx === index) {
       popupContainer.innerHTML = `
         <div class="container">
+        <i id="x-icon" id="close-icon" class="close-icon bi bi-x-lg"></i>
         <div class="top">
             <img  class="img" src="${element.image}" alt="${element.name}">
-
-            <i id="x-icon" id="close-icon" class="close-icon bi bi-x-lg"></i>
         </div>
 
         <h2 class="channel-name">${element.name}</h2>
