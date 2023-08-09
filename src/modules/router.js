@@ -8,9 +8,9 @@ export const renderList = (seriesList) => {
     singleItem.className = 'single-item';
     const image = document.createElement('img');
     image.src = series.image;
-    const details = document.createElement('div');
-    details.className = 'details';
-    details.innerHTML = `<p class='name'>${series.name}</p>
+    const overhead = document.createElement('div');
+    overhead.className = 'overhead';
+    overhead.innerHTML = `<p class='name'>${series.name}</p>
                             <i class="bi bi-hand-thumbs-up like-btn"></i>`;
     const btnContainer = document.createElement('div');
     btnContainer.className = 'button-container';
@@ -25,7 +25,7 @@ export const renderList = (seriesList) => {
     btnContainer.appendChild(reserve);
 
     singleItem.appendChild(image);
-    singleItem.appendChild(details);
+    singleItem.appendChild(overhead);
     singleItem.appendChild(btnContainer);
     container.appendChild(singleItem);
   });
