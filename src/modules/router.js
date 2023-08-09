@@ -2,7 +2,7 @@ import popup from './popup.js';
 
 const container = document.getElementById('items-container');
 
-export const renderList = (seriesList) => {
+export const renderList = (seriesList, involvements) => {
   container.innerHTML = '';
   seriesList.sort((a, b) => a.id - b.id);
   seriesList.forEach((series) => {
