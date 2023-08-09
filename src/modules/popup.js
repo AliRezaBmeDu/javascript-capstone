@@ -1,10 +1,9 @@
-
 const popup = (indx, seriesList) => {
-    const popupContainer = document.querySelector('.popup--hide');
+  const popupContainer = document.querySelector('.popup--hide');
 
   seriesList.forEach((element, index) => {
-    if(indx === index){
-        popupContainer.innerHTML = `
+    if (indx === index) {
+      popupContainer.innerHTML = `
         <div class="container">
         <div class="top">
             <img  class="img" src="${element.image}" alt="${element.name}">
@@ -38,11 +37,9 @@ const popup = (indx, seriesList) => {
     }
   });
 
-
   popupContainer.className = 'popup';
   const container = document.getElementById('items-container');
   container.appendChild(popupContainer);
-
 
   const closeIcon = document.querySelector('.close-icon');
   closeIcon.addEventListener('click', () => {
@@ -50,7 +47,5 @@ const popup = (indx, seriesList) => {
     popupContainer.className = 'popup--hide';
   });
 };
-
-
 
 export default popup;

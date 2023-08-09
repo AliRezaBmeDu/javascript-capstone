@@ -42,7 +42,6 @@ export const renderList = (seriesList) => {
       popup(index, seriesList);
     });
   });
-
 };
 
 const result = [];

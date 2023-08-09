@@ -128,7 +128,7 @@ footer {
 
 .container {
   width: 800px;
-  background-color: #f1f1f1;;
+  background-color: #f1f1f1;
   margin: 0 auto;
   display: grid;
   flex-direction: column;
