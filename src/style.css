@@ -18,6 +18,11 @@ nav ul {
   justify-content: space-around;
 }
 
+.my-logo {
+  height: 2rem;
+  width: 2rem;
+}
+
 .main-section {
   width: 100%;
   display: flex;
