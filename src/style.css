@@ -18,14 +18,80 @@ nav ul {
   justify-content: space-around;
 }
 
+.main-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #363434;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  grid-gap: 2rem; /* Gap between grid items */
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.single-item {
+  width: 270px;
+  height: 380px;
+  background-color: lightblue;
+  box-sizing: border-box;
+  border: 1px solid gray;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.single-item img {
+  width: 100%;
+  height: 65%;
+}
+
+.details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 1rem;
+  gap: 2rem;
+  font-size: 1.2rem;
+}
+
+.name {
+  font-family: 'Franklin Gothic Medium', Courier, monospace, sans-serif;
+}
+
+.like-btn {
+  height: 1.2rem;
+  margin-top: 1rem;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reserve, .comment {
+  margin: auto;
+  box-sizing: border-box;
+  box-shadow: 5px;
+  border-radius: 4px;
+  height: 1.5rem;
+  background-color: #4b4c4e;
+  color: lightblue;
+}
+
 /* Style the footer section */
 footer {
-  border-top: 2px solid;
-  margin-top: auto;
-  background-color: rgb(223, 228, 247);
-
+  border-top: 2px solid rgb(29, 28, 28);
+  background-color: rgb(29, 28, 28);
+  color: lightblue;
   /* Add the following Flexbox rules */
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
