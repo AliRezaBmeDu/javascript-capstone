@@ -33,23 +33,27 @@ nav ul {
 }
 
 .grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three columns */
-  grid-gap: 2rem; /* Gap between grid items */
+  display: flex;
+  flex-wrap: wrap;
   margin: auto;
   margin-top: 2rem;
   margin-bottom: 3rem;
+  padding: 3rem;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .single-item {
   width: 300px;
-  height: 400px;
+  height: 375px;
   background-color: lightblue;
   box-sizing: border-box;
   border: 1px solid gray;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
+  padding: 2px;
 }
 
 .single-item img {
@@ -74,7 +78,7 @@ nav ul {
 .like-container {
   width: 30%;
   height: 1.2rem;
-  margin-top: 1rem;
+  margin-top: 1.2rem;
 }
 
 .like-detail {

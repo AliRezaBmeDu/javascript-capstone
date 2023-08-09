@@ -14,7 +14,8 @@ export const renderList = (seriesList) => {
     overhead.className = 'overhead';
     overhead.innerHTML = `<p class='name'>${series.name}</p>
                           <div class='like-container'>
-                            <i class="bi bi-hand-thumbs-up like-btn"></i>
+                            <i class="bi bi-hand-thumbs-up like-btn" id="like-${series.id}"></i>
+                            <i class="bi bi-hand-thumbs-up-fill like-btn-fill" id="fill-${series.id}"></i>
                             <span class="like-detail">5 likes</span>
                           </div>`;
                           
@@ -46,6 +47,24 @@ export const renderList = (seriesList) => {
     button.addEventListener('click', () => {
       popup(index, seriesList);
     });
+  
+  const filledBtns = document.querySelectorAll('.like-btn-fill');
+  filledBtns.forEach((btn) => {
+    console.log('Is it working?'); 
+    btn.classList.add('hide-seek');
+  });
+  const likeBtns = document.querySelectorAll('.like-btn');
+  likeBtns.forEach((btn) => {
+    console.log('this is for like-btn');
+    btn.addEventListener('click', () => {
+      btn.classList.add('hide-seek');
+      const clickedId = btn.id[btn.id.length - 1];
+      console.log('buttonid: ', btn.id);
+      console.log('clickedID: ',clickedId);
+      const fillBtn = document.getElementById(`fill-${clickedId}`);
+      fillBtn.classList.remove('hide-seek');
+    })
+  })
   });
 };
 
