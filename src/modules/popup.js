@@ -75,7 +75,13 @@ const popup = async (indx, seriesList) => {
           const message = document.getElementById(`comment-${id}`).value;
           const li = document.createElement('li');
           li.innerHTML = `<b>${name}</b> said, "${message}" just now`;
-          theUL.appendChild(li);
+          if(name && message){
+            theUL.appendChild(li);
+            document.getElementById(`name-${id}`).value = "";
+            document.getElementById(`comment-${id}`).value = "";
+          }else {
+            console.log('fill');
+          }
         });
       });
     }
