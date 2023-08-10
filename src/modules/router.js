@@ -14,24 +14,26 @@ export const renderList = (seriesList, likeData) => {
     image.src = series.image;
     const overhead = document.createElement('div');
     overhead.className = 'overhead';
-    if(series.id === 1) {
-      console.log('Is this the likeData?: ',likeData);
+    if (series.id === 1) {
+      console.log('Is this the likeData?: ', likeData);
     }
-    //Get the like for specific item
-    const likesForSpecificItem = likeData.find(item => item.item_id === `item-${series.id}`)?.likes;
+    // Get the like for specific item
+    const foundItem = likeData.find((item) => item.item_id === `item-${series.id}`);
+    const likesForSpecificItem = foundItem ? foundItem.likes : undefined;
+
     console.log(likesForSpecificItem);
-    //Build the elements of the overhead dynamically
+    // Build the elements of the overhead dynamically
     const name = document.createElement('p');
-    name.className ='name';
+    name.className = 'name';
     name.innerHTML = `${series.name}`;
     const likeContainer = document.createElement('div');
     likeContainer.className = 'like-container';
     const likeBtn = document.createElement('i');
     likeBtn.id = `like-${series.id}`;
-    likeBtn.classList.add('bi','bi-hand-thumbs-up', 'like-btn');
+    likeBtn.classList.add('bi', 'bi-hand-thumbs-up', 'like-btn');
     const fillBtn = document.createElement('i');
     fillBtn.id = `fill-${series.id}`;
-    fillBtn.classList.add('bi','bi-hand-thumbs-up-fill', 'like-btn-fill', 'hide-seek');
+    fillBtn.classList.add('bi', 'bi-hand-thumbs-up-fill', 'like-btn-fill', 'hide-seek');
     const likeDetail = document.createElement('span');
     likeDetail.className = 'like-detail';
     likeDetail.id = `likes-${series.id}`;
@@ -41,7 +43,7 @@ export const renderList = (seriesList, likeData) => {
     likeContainer.appendChild(likeDetail);
     overhead.appendChild(name);
     overhead.appendChild(likeContainer);
-    
+
     likeBtn.addEventListener('click', () => {
       pressLike(singleItem.id);
       likeBtn.classList.add('hide-seek');
@@ -81,7 +83,6 @@ export const renderList = (seriesList, likeData) => {
 
 const result = [];
 const totalItem = 6;
-const likeData = getLikes();
 export const createItems = async (id) => {
   try {
     const likeData = await getLikes();
@@ -101,7 +102,7 @@ export const createItems = async (id) => {
       genre,
       summary,
     });
-    
+
     if (result.length === totalItem) {
       renderList(result, likeData);
     }
