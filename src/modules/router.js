@@ -72,6 +72,9 @@ export const renderList = (seriesList, likeData) => {
       popup(index, seriesList);
     });
   });
+  // Get the loading indicator element
+  const loadingContainer = document.querySelector('.loading-container');
+  loadingContainer.style.display = 'none';
 };
 const result = [];
 const totalItem = 6;
