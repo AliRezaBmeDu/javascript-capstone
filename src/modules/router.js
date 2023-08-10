@@ -2,7 +2,6 @@ import popup from './popup.js';
 import { pressLike, getLikes } from './involvement.js';
 
 const container = document.getElementById('items-container');
-
 export const renderList = (seriesList, likeData) => {
   container.innerHTML = '';
   seriesList.sort((a, b) => a.id - b.id);
@@ -15,13 +14,12 @@ export const renderList = (seriesList, likeData) => {
     const overhead = document.createElement('div');
     overhead.className = 'overhead';
     if (series.id === 1) {
-      console.log('Is this the likeData?: ', likeData);
+      // console.log('Is this the likeData?: ', likeData);
     }
     // Get the like for specific item
     const foundItem = likeData.find((item) => item.item_id === `item-${series.id}`);
     const likesForSpecificItem = foundItem ? foundItem.likes : undefined;
-
-    console.log(likesForSpecificItem);
+    // console.log(likesForSpecificItem);
     // Build the elements of the overhead dynamically
     const name = document.createElement('p');
     name.className = 'name';
@@ -43,14 +41,12 @@ export const renderList = (seriesList, likeData) => {
     likeContainer.appendChild(likeDetail);
     overhead.appendChild(name);
     overhead.appendChild(likeContainer);
-
     likeBtn.addEventListener('click', () => {
       pressLike(singleItem.id);
       likeBtn.classList.add('hide-seek');
       fillBtn.classList.remove('hide-seek');
       likeDetail.innerHTML = `${likesForSpecificItem + 1} likes`;
     });
-
     const btnContainer = document.createElement('div');
     btnContainer.className = 'button-container';
     const comment = document.createElement('button');
@@ -62,25 +58,21 @@ export const renderList = (seriesList, likeData) => {
     reserve.className = 'reserve';
     btnContainer.appendChild(comment);
     btnContainer.appendChild(reserve);
-
     singleItem.appendChild(image);
     singleItem.appendChild(overhead);
     singleItem.appendChild(btnContainer);
     container.appendChild(singleItem);
   });
-
   const commentsBtn = document.querySelectorAll('.comment');
   const popupSection = document.createElement('section');
   popupSection.className = 'popup--hide';
   container.appendChild(popupSection);
-
   commentsBtn.forEach((button, index) => {
     button.addEventListener('click', () => {
       popup(index, seriesList);
     });
   });
 };
-
 const result = [];
 const totalItem = 6;
 export const createItems = async (id) => {
@@ -92,7 +84,6 @@ export const createItems = async (id) => {
       language, genre,
       summary, idNum] = await [data.name, data.image.medium,
       data.rating.average, data.language, data.genres, data.summary, data.id];
-
     await result.push({
       id: idNum,
       name,
@@ -102,7 +93,6 @@ export const createItems = async (id) => {
       genre,
       summary,
     });
-
     if (result.length === totalItem) {
       renderList(result, likeData);
     }
@@ -110,7 +100,6 @@ export const createItems = async (id) => {
     console.error('Error fetching data: ', error);
   }
 };
-
 export const callCreateItems = () => {
   for (let i = 1; i <= totalItem; i += 1) {
     createItems(i);
