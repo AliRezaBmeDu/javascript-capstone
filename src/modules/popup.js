@@ -30,7 +30,7 @@ const popup = async (indx, seriesList) => {
           <div class="channel">
             ${element.summary}
           </div>`;
-          
+
       const commentCounterHeading = document.createElement('h2');
       commentCounterHeading.className = 'comments-heading';
       popupContainer.appendChild(commentCounterHeading);
