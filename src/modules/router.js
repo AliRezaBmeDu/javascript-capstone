@@ -1,25 +1,54 @@
 import popup from './popup.js';
+import { pressLike, getLikes } from './involvement.js';
 
 const container = document.getElementById('items-container');
 
-export const renderList = (seriesList, involvements) => {
+export const renderList = (seriesList, likeData) => {
   container.innerHTML = '';
   seriesList.sort((a, b) => a.id - b.id);
   seriesList.forEach((series) => {
     const singleItem = document.createElement('div');
     singleItem.className = 'single-item';
+    singleItem.id = `item-${series.id}`;
     const image = document.createElement('img');
     image.src = series.image;
     const overhead = document.createElement('div');
     overhead.className = 'overhead';
-    overhead.innerHTML = `<p class='name'>${series.name}</p>
-                          <div class='like-container'>
-                            <i class="bi bi-hand-thumbs-up like-btn" id="like-${series.id}"></i>
-                            <i class="bi bi-hand-thumbs-up-fill like-btn-fill" id="fill-${series.id}"></i>
-                            <span class="like-detail">5 likes</span>
-                          </div>`;
-                          
-                            // <i class="bi bi-hand-thumbs-up-fill like-btn-fill"></i>`;
+    if(series.id === 1) {
+      console.log('Is this the likeData?: ',likeData);
+    }
+    //Get the like for specific item
+    const likesForSpecificItem = likeData.find(item => item.item_id === `item-${series.id}`)?.likes;
+    console.log(likesForSpecificItem);
+    //Build the elements of the overhead dynamically
+    const name = document.createElement('p');
+    name.className ='name';
+    name.innerHTML = `${series.name}`;
+    const likeContainer = document.createElement('div');
+    likeContainer.className = 'like-container';
+    const likeBtn = document.createElement('i');
+    likeBtn.id = `like-${series.id}`;
+    likeBtn.classList.add('bi','bi-hand-thumbs-up', 'like-btn');
+    const fillBtn = document.createElement('i');
+    fillBtn.id = `fill-${series.id}`;
+    fillBtn.classList.add('bi','bi-hand-thumbs-up-fill', 'like-btn-fill', 'hide-seek');
+    const likeDetail = document.createElement('span');
+    likeDetail.className = 'like-detail';
+    likeDetail.id = `likes-${series.id}`;
+    likeDetail.innerHTML = `${likesForSpecificItem} likes`;
+    likeContainer.appendChild(likeBtn);
+    likeContainer.appendChild(fillBtn);
+    likeContainer.appendChild(likeDetail);
+    overhead.appendChild(name);
+    overhead.appendChild(likeContainer);
+    
+    likeBtn.addEventListener('click', () => {
+      pressLike(singleItem.id);
+      likeBtn.classList.add('hide-seek');
+      fillBtn.classList.remove('hide-seek');
+      likeDetail.innerHTML = `${likesForSpecificItem + 1} likes`;
+    });
+
     const btnContainer = document.createElement('div');
     btnContainer.className = 'button-container';
     const comment = document.createElement('button');
@@ -47,31 +76,15 @@ export const renderList = (seriesList, involvements) => {
     button.addEventListener('click', () => {
       popup(index, seriesList);
     });
-  
-  const filledBtns = document.querySelectorAll('.like-btn-fill');
-  filledBtns.forEach((btn) => {
-    console.log('Is it working?'); 
-    btn.classList.add('hide-seek');
-  });
-  const likeBtns = document.querySelectorAll('.like-btn');
-  likeBtns.forEach((btn) => {
-    console.log('this is for like-btn');
-    btn.addEventListener('click', () => {
-      btn.classList.add('hide-seek');
-      const clickedId = btn.id[btn.id.length - 1];
-      console.log('buttonid: ', btn.id);
-      console.log('clickedID: ',clickedId);
-      const fillBtn = document.getElementById(`fill-${clickedId}`);
-      fillBtn.classList.remove('hide-seek');
-    })
-  })
   });
 };
 
 const result = [];
 const totalItem = 6;
+const likeData = getLikes();
 export const createItems = async (id) => {
   try {
+    const likeData = await getLikes();
     const response = await fetch(`https://api.tvmaze.com/shows/${id}`);
     const data = await response.json();
     const [name, image, rating,
@@ -88,9 +101,9 @@ export const createItems = async (id) => {
       genre,
       summary,
     });
-
+    
     if (result.length === totalItem) {
-      renderList(result);
+      renderList(result, likeData);
     }
   } catch (error) {
     console.error('Error fetching data: ', error);
