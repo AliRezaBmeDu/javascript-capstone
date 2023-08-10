@@ -1,4 +1,5 @@
 import { addComment, getComment } from './involvement';
+import commentsCounter from './commentsCounter';
 
 const postComments = (id) => {
   const uname = document.getElementById(`name-${id}`).value;
@@ -28,8 +29,12 @@ const popup = async (indx, seriesList) => {
           <h2 class="channel-name">${element.name}</h2>
           <div class="channel">
             ${element.summary}
-          </div>
-          <h2 class="comments-heading">Comments</h2>`;
+          </div>`;
+
+      const commentCounterHeading = document.createElement('h2');
+      commentCounterHeading.className = 'comments-heading';
+      popupContainer.appendChild(commentCounterHeading);
+
       const commentHolder = document.createElement('div');
       commentHolder.className = 'comments';
       const ul = document.createElement('ul');
@@ -75,6 +80,10 @@ const popup = async (indx, seriesList) => {
           const message = document.getElementById(`comment-${id}`).value;
           const li = document.createElement('li');
           li.innerHTML = `<b>${name}</b> said, "${message}" just now`;
+
+          const commentsNumber = commentsCounter(element.id);
+          commentCounterHeading.innerHTML = `Comments (${commentsNumber + 1})`;
+
           if (name && message) {
             theUL.appendChild(li);
             document.getElementById(`name-${id}`).value = '';
@@ -84,6 +93,9 @@ const popup = async (indx, seriesList) => {
           }
         });
       });
+
+      const commentsNumber = commentsCounter(element.id);
+      commentCounterHeading.innerHTML = `Comments (${commentsNumber})`;
     }
   });
 };
