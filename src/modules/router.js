@@ -1,5 +1,6 @@
 import popup from './popup.js';
 import { pressLike, getLikes } from './involvement.js';
+import itemCounter from './addCounter.js';
 
 const container = document.getElementById('items-container');
 export const renderList = (seriesList, likeData) => {
@@ -72,6 +73,12 @@ export const renderList = (seriesList, likeData) => {
       popup(index, seriesList);
     });
   });
+  // Get the loading indicator element
+  const loadingContainer = document.querySelector('.loading-container');
+  loadingContainer.style.display = 'none';
+  const shows = document.getElementById('shows');
+  const numberOfItems = itemCounter();
+  shows.innerHTML = `Shows(${numberOfItems})`;
 };
 const result = [];
 const totalItem = 6;

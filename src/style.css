@@ -212,3 +212,57 @@ ul.user-comment li {
 .hide-seek {
   display: none !important;
 }
+
+/* Container for the loading indicator */
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(117, 116, 116, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Reload symbol animation */
+.reload-symbol {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.circle,
+.arrow {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 4px solid transparent;
+  border-radius: 50%;
+  animation: rotate 2s linear infinite;
+}
+
+.circle {
+  border-top-color: #3498db;
+  border-bottom-color: #3498db;
+}
+
+.arrow {
+  border-left-color: #3498db;
+  border-right-color: #3498db;
+  animation: rotate 1s linear infinite reverse;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
