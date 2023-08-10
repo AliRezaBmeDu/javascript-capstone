@@ -35,8 +35,8 @@ export const addComment = async (newComment) => {
   const response = await fetch(`${baseUrl}/apps/${appId}/comments`, {
     method: 'POST',
     headers: {
-      'Content-type': 'application/json'
-  },
+      'Content-type': 'application/json',
+    },
     body: newComment,
   });
   return response;

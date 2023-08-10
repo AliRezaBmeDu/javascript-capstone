@@ -1,5 +1,6 @@
 import popup from './popup.js';
 import { pressLike, getLikes } from './involvement.js';
+
 const container = document.getElementById('items-container');
 export const renderList = (seriesList, likeData) => {
   container.innerHTML = '';
