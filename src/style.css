@@ -1,0 +1,283 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Style the header section */
+nav {
+  background-color: rgb(121, 5, 5);
+  color: lightblue;
+  padding: 0.5rem 5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: 'Franklin Gothic Medium', Courier, monospace, sans-serif;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul span {
+  position: relative;
+  left: 4px;
+  bottom: 0.5rem;
+}
+
+.my-logo {
+  height: 2rem;
+  width: 2rem;
+}
+
+.main-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #363434;
+}
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  padding: 3rem;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-item {
+  width: 300px;
+  height: 375px;
+  background-color: lightblue;
+  box-sizing: border-box;
+  border: 1px solid gray;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+}
+
+.single-item img {
+  width: 100%;
+  height: 60%;
+}
+
+.overhead {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 1rem;
+  gap: 2rem;
+  font-size: 1.2rem;
+}
+
+.name {
+  font-family: 'Franklin Gothic Medium', Courier, monospace, sans-serif;
+  width: 70%;
+}
+
+.like-container {
+  width: 30%;
+  height: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.like-detail {
+  margin-left: 2px;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+.reserve,
+.comment {
+  margin: auto;
+  box-sizing: border-box;
+  border-radius: 4px;
+  height: 1.5rem;
+  background-color: #4b4c4e;
+  color: lightblue;
+}
+
+/* Style the footer section */
+footer {
+  border-top: 2px solid rgb(29, 28, 28);
+  background-color: rgb(29, 28, 28);
+  color: lightblue;
+
+  /* Add the following Flexbox rules */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0.5rem;
+}
+
+/* Add style for comment popup */
+.hidden,
+.popup--hide {
+  display: none;
+}
+
+.popup {
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: #f1f1f1;
+  display: grid;
+  width: 60vw;
+  height: 100vh;
+  position: fixed;
+  overflow: scroll;
+  top: 0;
+  bottom: 0;
+}
+
+.container {
+  width: 88%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -1.5rem;
+}
+
+.img {
+  width: 90%;
+  height: 70vh;
+}
+
+ul.user-comment li {
+  list-style: none;
+  line-height: 1.5;
+}
+
+.channel-name {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.comments-heading {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.channel {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+#x-icon {
+  float: right;
+  font-size: 1.5rem;
+  margin-left: 2rem;
+  cursor: pointer;
+  position: relative;
+  left: 2rem;
+  align-self: flex-end;
+}
+
+.add-comment > * {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.2rem;
+}
+
+.submitBtn {
+  background-color: white;
+  border: 1px solid #888;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.submitBtn:hover {
+  background-color: wheat;
+}
+
+.hide-seek {
+  display: none !important;
+}
+
+/* Container for the loading indicator */
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(117, 116, 116, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Reload symbol animation */
+.reload-symbol {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.circle,
+.arrow {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 4px solid transparent;
+  border-radius: 50%;
+  animation: rotate 2s linear infinite;
+}
+
+.circle {
+  border-top-color: #3498db;
+  border-bottom-color: #3498db;
+}
+
+.arrow {
+  border-left-color: #3498db;
+  border-right-color: #3498db;
+  animation: rotate 1s linear infinite reverse;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+nav ul li:first-child {
+  display: flex;
+  gap: 4px;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-style: italic;
+  color: yellow;
+}
