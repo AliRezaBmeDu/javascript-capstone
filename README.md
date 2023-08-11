@@ -110,6 +110,12 @@ To run the project, execute the following command:
 - GitHub: [@githubhandle](https://github.com/AliRezaBmeDu)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/mohammad-ali-reza-389717102/)
 
+👤 **Mozamel Jawad**
+
+- GitHub: [@githubhandle](https://github.com/MozamelJawad)
+- Twitter: [@twitterhandle](https://twitter.com/mozameljawad)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mozamel-jawad-2b4421111/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
