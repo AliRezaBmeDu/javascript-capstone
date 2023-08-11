@@ -90,9 +90,11 @@ Install this project with:
 
 To run the project, execute the following command:
 
-> npm install
-> npm run build
-> npm start
+```sh
+   npm install
+   npm run build
+   npm start
+```
 
 ### Run tests
 
