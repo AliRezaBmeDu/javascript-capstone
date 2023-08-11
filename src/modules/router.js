@@ -53,7 +53,7 @@ export const renderList = (seriesList, likeData) => {
     const comment = document.createElement('button');
     comment.innerText = 'Comments';
     comment.className = 'comment';
-    comment.id = series.name;
+    comment.id = `commentBtn-${series.id}`;
     const reserve = document.createElement('button');
     reserve.innerText = 'Reservation';
     reserve.className = 'reserve';
@@ -64,13 +64,17 @@ export const renderList = (seriesList, likeData) => {
     singleItem.appendChild(btnContainer);
     container.appendChild(singleItem);
   });
+
+  //-----------PopupSection-----------//
   const commentsBtn = document.querySelectorAll('.comment');
   const popupSection = document.createElement('section');
   popupSection.className = 'popup--hide';
   container.appendChild(popupSection);
-  commentsBtn.forEach((button, index) => {
+  commentsBtn.forEach((button) => {
+    const id = parseInt(button.id.split('-')[1]);
+    const series = seriesList.filter(child => child.id === id);
     button.addEventListener('click', () => {
-      popup(index, seriesList);
+      popup(id, seriesList);
     });
   });
   // Get the loading indicator element
