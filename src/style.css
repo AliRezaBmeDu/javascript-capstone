@@ -18,6 +18,12 @@ nav ul {
   justify-content: space-around;
 }
 
+nav ul span {
+  position: relative;
+  left: 4px;
+  bottom: 0.5rem;
+}
+
 .my-logo {
   height: 2rem;
   width: 2rem;
@@ -265,4 +271,13 @@ ul.user-comment li {
   100% {
     transform: rotate(360deg);
   }
+}
+
+nav ul li:first-child {
+  display: flex;
+  gap: 4px;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-style: italic;
+  color: yellow;
 }
