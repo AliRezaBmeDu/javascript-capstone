@@ -1,11 +1,15 @@
 import itemCounter from "./addCounter";
 
-// Mock getElementById method to provide a fake listDiv element
-jest.spyOn(document, 'getElementById').mockReturnValue(document.createElement('div'));
 
-describe('Item Count', () => {
+describe('Testing itemCounter', () => {
+    it('should give an error when there is no input parameter', () => {
+        expect(() => itemCounter()).toThrow(Error);
+    });
+
     it('should return the number of items in the specific div', () => {
         const listDivMock = document.createElement('div');
+        // Spy on the appendChild method to check if it's called with the correct parameters
+        const appendChildSpy = jest.spyOn(listDivMock, 'appendChild');
         const count = 5;
         for (let i=0; i<count; i+=1){
             listDivMock.appendChild(document.createElement('div'));
