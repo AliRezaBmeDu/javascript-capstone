@@ -65,14 +65,13 @@ export const renderList = (seriesList, likeData) => {
     container.appendChild(singleItem);
   });
 
-  //-----------PopupSection-----------//
+  // -----------PopupSection-----------//
   const commentsBtn = document.querySelectorAll('.comment');
   const popupSection = document.createElement('section');
   popupSection.className = 'popup--hide';
   container.appendChild(popupSection);
   commentsBtn.forEach((button) => {
-    const id = parseInt(button.id.split('-')[1]);
-    const series = seriesList.filter(child => child.id === id);
+    const id = parseInt(button.id.split('-')[1], 10);
     button.addEventListener('click', () => {
       popup(id, seriesList);
     });

@@ -17,7 +17,7 @@ const popup = async (indx, seriesList) => {
   const data = await getComment(`item-${indx}`);
   // console.log("Data testing in popup", data);
   const parentComment = document.querySelector('.popup--hide');
-  seriesList.forEach((element, index) => {
+  seriesList.forEach((element) => {
     if (element.id === indx) {
       const popupContainer = document.createElement('div');
       popupContainer.className = 'container';
