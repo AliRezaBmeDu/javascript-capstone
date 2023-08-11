@@ -1,7 +1,6 @@
-const itemCounter = () => {
-  const itemsHolder = document.getElementById('items-container');
-  const numberOfItems = itemsHolder.childElementCount;
-  return numberOfItems - 1;
+const itemCounter = (itemContainer) => {
+  const numberOfItems = itemContainer.childElementCount;
+  return numberOfItems;
 };
 
 export default itemCounter;

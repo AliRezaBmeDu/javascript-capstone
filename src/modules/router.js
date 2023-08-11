@@ -77,7 +77,7 @@ export const renderList = (seriesList, likeData) => {
   const loadingContainer = document.querySelector('.loading-container');
   loadingContainer.style.display = 'none';
   const shows = document.getElementById('shows');
-  const numberOfItems = itemCounter();
+  const numberOfItems = itemCounter(shows);
   shows.innerHTML = `Shows(${numberOfItems})`;
 };
 const result = [];
